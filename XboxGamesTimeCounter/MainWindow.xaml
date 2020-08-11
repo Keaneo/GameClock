@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <!--<ListBox Name="listbox1" HorizontalAlignment="Left" Height="350" Margin="10,10,0,0" VerticalAlignment="Top" Width="390" SelectionChanged="Listbox1_SelectionChanged"/>-->
+        <Label Name="ProcessNameLabel" Content="Process Name" HorizontalAlignment="Left" Margin="405,10,0,0" VerticalAlignment="Top" Width="377" FontSize="16"/>
+        <Label Name="TimeRunning" Content="Time" HorizontalAlignment="Left" Margin="405,46,0,0" VerticalAlignment="Top" Width="377" Height="100" FontSize="24"/>
+        <Button Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" Width="100" Height="44" Click="RefreshButton_Click"/>
+        <ListBox Name="listbox1" Margin="10,10,392,59" SelectionChanged="ListBox_SelectionChanged" >
+            <ListBox.ItemTemplate x:Key="CheckboxListItem">
+                <DataTemplate>
+                    <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Path=Item.Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
